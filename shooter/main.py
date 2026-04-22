@@ -85,6 +85,9 @@ while run:
         if e.type == KEYDOWN:
             if e.key == K_r:
                 finish = False
+                points = 0
+                fallos = 0
+                vidas = 3
             if e.key == K_SPACE:
                 player.shoot()
 
@@ -128,7 +131,9 @@ while run:
         if points >= 20:
             finish = True
             screen.fill(BLACK)
-            # ... renderizar la pantalla de victoria
+            victory = transform.scale(image.load(VICTORY_IMG), (WIDTH, HEIGHT))
+            screen.blit(victory, (0, 0))
+
 
 
 
